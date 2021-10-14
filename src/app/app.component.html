@@ -35,144 +35,56 @@
     <div class="body-item">
       <div class="row my-5 py-5 mr-5 d-flex justify-content-end w-100">
         <div class="">
-          <img src="https://i1.wp.com/sachdenroi.com/wp-content/uploads/2021/02/sach-hay-nen-doc-2021.jpg?fit=1324%2C735&ssl=1" height="377px" width="768px">
+          <img src="{{ImgSlide}}" height="377px" width="768px">
         </div>
         <div class="d-flex flex-column ml-5 justify-content-between">
-          <img src="https://duyendangvietnam.net.vn/public/uploads/file1s/bt_nguyet_minh/ban%20cung%20the.jpg" width="28%">
-          <img src="https://duyendangvietnam.net.vn/public/uploads/file1s/bt_nguyet_minh/ban%20cung%20the.jpg" width="28%">
-          <img src="https://duyendangvietnam.net.vn/public/uploads/file1s/bt_nguyet_minh/ban%20cung%20the.jpg" width="28%">
+          <div *ngFor="let imgSlide of dataImgSlide">
+            <div  *ngIf="imgSlide.id > 1">
+              <img src="{{imgSlide.img}}" width="28%">
+            </div>
+          </div>
         </div>
       </div>
       <div style="margin: 0px 300px">
         <div>
-          <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #9FD16D">
-            <p>FLASH SALE</p>
+              <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #9FD16D">
+              <p>FLASH SALE</p>
             <mat-icon>keyboard_arrow_down</mat-icon>
           </div>
-          <mdb-carousel class="carousel slide carousel-fade my-4 mx-5" [animation]="'fade'">
+          <mdb-carousel class="carousel slide carousel-fade my-4 d-flex" [animation]="'fade'">
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id < 6" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id < 11 && bookSale.id >5" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3" slide-style>96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style" >96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id > 10" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
@@ -183,195 +95,77 @@
             <p>SÁCH BÁN CHẠY</p>
             <mat-icon>keyboard_arrow_down</mat-icon>
           </div>
-          <div class="row my-5 mx-5">
+          <div class="d-flex my-5 mx-5">
             <div class="mr-5 pr-5">
-                <img src="https://conhocgioi.com/wp-content/uploads/2019/05/B%C3%AD-quy%E1%BA%BFt-h%E1%BB%8Dc-gi%E1%BB%8Fi-%E1%BB%9F-tr%C6%B0%E1%BB%9Dng.jpg" height="650" width="415">
+                <img src="{{BestBook}}" height="650" width="415">
             </div>
-            <div>
+            <div class="d-flex flex-column">
               <div class="d-flex">
-                <div class="d-flex  flex-column">
-                  <img src="https://i.bloganchoi.com/bloganchoi.com/wp-content/uploads/2019/04/minh-khong-yeu-nhau-nua-643x1024.jpg?fit=643%2C20000&quality=95&ssl=1" height="225px" width="170x">
-                  <span class="my-3">Năng lực tìm kiếm</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">79.000 đ</h5>
-                    <p class="ml-4 slide-style">99.000 đ</p>
-                  </div>
-                </div>
-                <div class="d-flex mx-5 px-4 flex-column">
-                  <img src="https://i.bloganchoi.com/bloganchoi.com/wp-content/uploads/2019/04/con-gai-phai-manh-me-601x1024.jpg?fit=601%2C20000&quality=95&ssl=1" height="225px" width="170x">
-                  <span class="my-3">Về nhà với mẹ</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">79.000 đ</h5>
-                    <p class="ml-4 slide-style">99.000 đ</p>
-                  </div>
-                </div>
-                <div class="d-flex flex-column">
-                  <img src="https://i.bloganchoi.com/bloganchoi.com/wp-content/uploads/2019/04/doc-than-649x1024.jpg?fit=649%2C20000&quality=95&ssl=1" height="225px" width="170x">
-                  <span class="my-3">Nhà giả kim</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">79.000 đ</h5>
-                    <p class="ml-4 slide-style    ">99.000 đ</p>
+                <div *ngFor="let bestBook of dataBestBook">
+                  <div class="d-flex flex-column mx-4" *ngIf="bestBook.id > 1 && bestBook.id < 5">
+                    <img src="{{bestBook.img}}" height="225px" width="170x">
+                    <span class="my-3">{{bestBook.name}}</span>
+                    <div class="d-flex">
+                      <h5 style="color: #F4982B;">{{bestBook.salePrice}} đ</h5>
+                      <p class="ml-4 slide-style">{{bestBook.price}} đ</p>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="d-flex">
-                <div class="d-flex flex-column">
-                  <img class="i6" height="225px" width="170x">
-                  <span class="my-3">Những kẻ xuất chúng</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">79.000 đ</h5>
-                    <p class="ml-4 slide-style">99.000 đ</p>
-                  </div>
-                </div>
-                <div class="d-flex d-flex mx-5 px-4 flex-column">
-                  <img class="i7" height="225px" width="170x">
-                  <span class="my-3">Siêu trí nhớ</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">79.000 đ</h5>
-                    <p class="ml-4 slide-style">99.000 đ</p>
-                  </div>
-                </div>
-                <div class="d-flex flex-column">
-                  <img class="i8" height="225px" width="170x">
-                  <span class="my-3">Tuổi trẻ đáng giá bao nhiêu</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">79.000 đ</h5>
-                    <p class="ml-4 slide-style">99.000 đ</p>
+                <div *ngFor="let bestBook of dataBestBook">
+                  <div class="d-flex flex-column mx-4" *ngIf="bestBook.id > 4">
+                    <img src="{{bestBook.img}}" height="225px" width="170x">
+                    <span class="my-3">{{bestBook.name}}</span>
+                    <div class="d-flex">
+                      <h5 style="color: #F4982B;">{{bestBook.salePrice}} đ</h5>
+                      <p class="ml-4 slide-style">{{bestBook.price}} đ</p>
+                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
-          </div>
         </div>
         <div>
           <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #F57224">
             <p>SÁCH TRONG NƯỚC</p>
             <mat-icon>keyboard_arrow_down</mat-icon>
           </div>
-          <mdb-carousel class="carousel slide carousel-fade my-4 mx-5" [animation]="'fade'">
+          <mdb-carousel class="carousel slide carousel-fade my-4 d-flex" [animation]="'fade'">
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id < 6" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id < 11 && bookSale.id >5" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3" slide-style>96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style" >96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id > 10" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
@@ -383,328 +177,149 @@
         <p class="p-4 title ">Sự Đọc Sách Đối Với Trí Tuệ
           Giống Như Sự Vận Động Đối Với Cơ Thể</p>
       </div>
-      <div class="pt-5" style="margin: 0 300px">
+      <div class="pt-5">
         <div>
-          <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #9FD16D">
-            <p>FLASH SALE</p>
+          <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #FCED66">
+            <p>SÁCH NƯỚC NGOÀI</p>
             <mat-icon>keyboard_arrow_down</mat-icon>
           </div>
-          <mdb-carousel class="carousel slide carousel-fade my-4 mx-5" [animation]="'fade'">
+          <mdb-carousel class="carousel slide carousel-fade my-4 d-flex" [animation]="'fade'">
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id < 6" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id < 11 && bookSale.id >5" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3" slide-style>96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style" >96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id > 10" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
           </mdb-carousel>
         </div>
         <div>
-          <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #F57224">
-            <p>SÁCH TRONG NƯỚC</p>
+          <div class="d-flex justify-content-between pt-3 px-5" style="background-color: rgba(0, 0, 0, 0.25);">
+            <p>pHIÊN CHỢ CŨ</p>
             <mat-icon>keyboard_arrow_down</mat-icon>
           </div>
-          <mdb-carousel class="carousel slide carousel-fade my-4 mx-5" [animation]="'fade'">
+          <mdb-carousel class="carousel slide carousel-fade my-4 d-flex" [animation]="'fade'">
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://cdn.123job.vn/123job/uploads/2021/04/13/2021_04_13______b80b2826de4db4d4d7925c3ef74c3982.jpg" width="170x">
-                <span class="my-3">Bạn đắt giá bao nhiêu</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">79.000 đ</h5>
-                  <p class="ml-4 slide-style">99.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id < 6" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-nha-gia-kim_600x962.jpg" width="170x">
-                <span class="my-3">Quốc gia khởi nghiệp</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">131.000 đ</h5>
-                  <p class="ml-3 slide-style">179.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id < 11 && bookSale.id >5" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
             <mdb-carousel-item class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3" slide-style>96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style" >96.000 đ</p>
-                </div>
-              </div>
-              <div class="d-flex flex-column">
-                <img src="https://www.reader.com.vn/uploads/images/2019/10/30/19/sach-dieu-y-nghia-nhat-trong-tung-khoanh-khac_600x1000.gif" width="170x">
-                <span class="my-3" style="width: 160px">Cân bằng cảm xúc, cả lúc giông bão</span>
-                <div class="d-flex">
-                  <h5 style="color: #F4982B;">76.000 đ</h5>
-                  <p class="ml-3 slide-style">96.000 đ</p>
+              <div *ngFor="let bookSale of dataBookSale">
+                <div *ngIf="bookSale.id > 10" class="d-flex flex-column mx-5">
+                  <img src="{{bookSale.img}}" width="170x">
+                  <span class="my-3">{{bookSale.name}}</span>
+                  <div class="d-flex">
+                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
+                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
+                  </div>
                 </div>
               </div>
             </mdb-carousel-item>
           </mdb-carousel>
         </div>
-      </div>
-      <div style="background: #DEFBFD;">
-        <div style="margin: 0px 300px" class="py-5">
-          <div class="">
-            <div class="d-flex justify-content-between pt-3 px-5 mb-5" style="background-color: #16445E">
-              <p>REVIEW SÁCH</p>
-              <mat-icon>keyboard_arrow_down</mat-icon>
-            </div>
-            <div class="d-flex">
-              <div>
-                <img src="https://store.rodbooks.com/Upload/2019/8/7/top-10-cuon-sach-hay-nhat-ve-tai-chinh-dang-doc-nhat-duoc-cac-nha-dau-tu-pho-wall-binh-chon-trong-nam-nay-hinh-anh-2.jpg" style="border: 20px solid #ffffff" height="380px" width="290x">
-              </div>
-              <div class="mx-5">
-                <div>
-                  <h1>STEVE JOBS: MỌI THỨ ĐỀU CÓ THỂ</h1>
-                  <div class="d-flex mb-4">
-                    <p>Tác giả: </p>
-                    <p class="mx-4" style="font-weight: 700">Trương Tuyển Cần</p>
-                  </div>
-                  <div>
-                    <p>
-                      Cuốn sách Steve Jobs - Mọi Thứ Đều Có Thể sẽ mang đến cho bạn những trải nghiệm mới mẻ,
-                      bài học quý báu qua hành trình cuộc đời cũng như những năm tháng sự nghiệp của Steve Jobs,
-                      qua đó giúp bạn khám phá câu chuyện thành công thần kỳ của hãng Apple mà Steve Jobs là biểu
-                      tượng tiêu biểu cho sự thành công ấy.
-                    </p>
-                    <p>
-                      Cuốn sách Steve Jobs - Mọi Thứ Đều Có Thể sẽ mang đến cho bạn những trải nghiệm mới mẻ,
-                      bài học quý báu qua hành trình cuộc đời cũng như những năm tháng sự nghiệp của Steve Jobs,
-                      qua đó giúp bạn khám phá câu chuyện thành công thần kỳ của hãng Apple mà Steve Jobs là biểu
-                      tượng tiêu biểu cho sự thành công ấy.
-                    </p>
-                  </div>
-                  <p class="py-2 px-4" style="background-color: #FC4B4B; width: 110px; border-radius: 40px">Đọc tiếp</p>
-                </div>
-              </div>
-              <div class="my-5">
-                <span class="px-4 py-4 mr-4" style="color: white; background-color: #FC4B4B; border-radius: 50%; font-size: 32px">9.5</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div style="background-color: #434343; color: white" class="pt-3 d-flex justify-content-center">
-        <p class="mx-5">Về chúng tôi</p>
-        <p class="mx-5">Lần đầu đến đây</p>
-        <p class="mx-5">BOOKSTORE</p>
-        <p class="mx-5">Blog</p>
-        <p class="mx-5">Facebook</p>
-      </div>
-      <div class="d-flex pt-3 justify-content-center" style="background-color: #000000; color: white">
-        <p class="mx-5">ĐIỀU KHOẢN</p>
-        <P class="mx-5">CHÍNH SÁCH</P>
       </div>
     </div>
+    </div>
+  <div style="background: #DEFBFD;">
+    <div style="margin: 0px 300px" class="py-5">
+      <div class="">
+        <div class="d-flex justify-content-between pt-3 px-5 mb-5" style="background-color: #16445E">
+          <p>REVIEW SÁCH</p>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </div>
+        <div class="d-flex">
+          <div>
+            <img src="https://store.rodbooks.com/Upload/2019/8/7/top-10-cuon-sach-hay-nhat-ve-tai-chinh-dang-doc-nhat-duoc-cac-nha-dau-tu-pho-wall-binh-chon-trong-nam-nay-hinh-anh-2.jpg" style="border: 20px solid #ffffff" height="380px" width="290x">
+          </div>
+          <div class="mx-5">
+            <div>
+              <h1>STEVE JOBS: MỌI THỨ ĐỀU CÓ THỂ</h1>
+              <div class="d-flex mb-4">
+                <p>Tác giả: </p>
+                <p class="mx-4" style="font-weight: 700">Trương Tuyển Cần</p>
+              </div>
+              <div>
+                <p>
+                  Cuốn sách Steve Jobs - Mọi Thứ Đều Có Thể sẽ mang đến cho bạn những trải nghiệm mới mẻ,
+                  bài học quý báu qua hành trình cuộc đời cũng như những năm tháng sự nghiệp của Steve Jobs,
+                  qua đó giúp bạn khám phá câu chuyện thành công thần kỳ của hãng Apple mà Steve Jobs là biểu
+                  tượng tiêu biểu cho sự thành công ấy.
+                </p>
+                <p>
+                  Cuốn sách Steve Jobs - Mọi Thứ Đều Có Thể sẽ mang đến cho bạn những trải nghiệm mới mẻ,
+                  bài học quý báu qua hành trình cuộc đời cũng như những năm tháng sự nghiệp của Steve Jobs,
+                  qua đó giúp bạn khám phá câu chuyện thành công thần kỳ của hãng Apple mà Steve Jobs là biểu
+                  tượng tiêu biểu cho sự thành công ấy.
+                </p>
+              </div>
+              <p class="py-2 px-4" style="background-color: #FC4B4B; width: 110px; border-radius: 40px">Đọc tiếp</p>
+            </div>
+          </div>
+          <div class="my-5">
+            <span class="px-4 py-4 mr-4" style="color: white; background-color: #FC4B4B; border-radius: 50%; font-size: 32px">9.5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="background-color: #434343; color: white" class="pt-3 d-flex justify-content-center">
+    <p class="mx-5">Về chúng tôi</p>
+    <p class="mx-5">Lần đầu đến đây</p>
+    <p class="mx-5">BOOKSTORE</p>
+    <p class="mx-5">Blog</p>
+    <p class="mx-5">Facebook</p>
+  </div>
+  <div class="d-flex pt-3 justify-content-center" style="background-color: #000000; color: white">
+    <p class="mx-5">ĐIỀU KHOẢN</p>
+    <P class="mx-5">CHÍNH SÁCH</P>
+  </div>
 </div>

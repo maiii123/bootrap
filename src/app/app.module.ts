@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {MatIconModule} from '@angular/material/icon'
@@ -13,7 +14,9 @@ import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
     BrowserModule,
     MatIconModule,
     CarouselModule,
-    WavesModule
+    WavesModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
