@@ -1,0 +1,50 @@
+body{
+  box-sizing: border-box !important;
+}
+.box-shadow{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+::ng-deep {
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon{
+    background-color: #000 !important;
+  }
+  .main{
+    position: fixed;
+    top: 0;
+    z-index: 4;
+  }
+  .body-item{
+    z-index: 0;
+    margin-top: 220px;
+  }
+  .carousel-indicators{
+    display: none !important;
+  }
+  .header
+  {
+    background-color: #5DC5CC !important;
+    width: 100%;
+    position: fixed;
+    top: 0;
+  }
+  .heade
+  {
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 60px;
+  }
+  .title{
+    background-color: #16445E;
+    width: 300px;
+    height: 100px;
+    color: white;
+    margin: 15px 0
+}
+  .slide-style{
+    text-decoration-line: line-through;
+    color: #999999;
+  }
+}
