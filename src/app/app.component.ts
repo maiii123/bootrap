@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import {HttpClient} from '@angular/common/http';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,38 +8,51 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent {
   title = 'bootrap';
-  dataBookSale:any;
-  dataImgSlide:any;
-  ImgSlide:any;
-  dataBestBook:any;
-  BestBook:any;
-  linkBookSale = 'https://60d29896858b410017b2defb.mockapi.io/apibootrap';
-  linkImgSlide = 'https://60d29896858b410017b2defb.mockapi.io/imgSlide';
-  linkBestBook = 'https://60d29896858b410017b2defb.mockapi.io/bestBook';
+  listDomesticbooks = [
+    {
+      id: 0,
+      title: 'Văn học'
+    },
+    {
+      id: 1,
+      title: 'Kinh tế'
+    },
+    {
+      id: 2,
+      title: 'Tâm lý - Kỹ năng sống'
+    },
+    {
+      id: 3,
+      title: 'Nuôi dạy con'
+    },
+    {
+      id: 4,
+      title: 'Sách thiếu nhi'
+    },
+    {
+      id: 5,
+      title: 'Tiểu sử - Hồi ký'
+    },
+    {
+      id: 6,
+      title: 'Sách học ngoại ngữ'
+    }
+  ];
   constructor(
-    private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute,
   ) {
-    this.getListBoolSale();
-    this.getListimgSlide();
-    this.getBestBook();
   }
-  getListBoolSale(){
-    this.http.get(this.linkBookSale).subscribe(res =>{
-      this.dataBookSale = res;
-    })
+
+  bookType(id: any){
+    if(id === 1){
+      this.domesticBooks()
+    }
   }
-  getListimgSlide(){
-    this.http.get(this.linkImgSlide).subscribe(res =>{
-      this.dataImgSlide = res;
-      this.ImgSlide = this.dataImgSlide[0].img;
-    })
-  }
-  getBestBook(){
-    this.http.get(this.linkBestBook).subscribe(res =>{
-      this.dataBestBook = res;
-      this.BestBook = this.dataBestBook[0].img;
-      console.log(res)
-    })
+
+
+  domesticBooks() {
+    this.router.navigate(['domesticbooks']).then();
   }
 
 

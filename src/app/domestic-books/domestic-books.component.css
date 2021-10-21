@@ -1,0 +1,20 @@
+.slide-style{
+  text-decoration-line: line-through;
+  color: #999999;
+}
+.active{
+  background-color: #C94800 !important;
+}
+.deactive{
+  background-color: #f5f3f3;
+  color: #000000;
+}
+.bar{
+  border-radius: 25px;
+  font-size: 13px
+}
+.pageItem{
+  font-size: 13px;
+  margin-left: 5px;
+  padding: 11px 12px;
+}

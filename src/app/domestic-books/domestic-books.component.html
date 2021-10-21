@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="" style="  margin: 0px 150px; padding: 94px 125px 120px 136px;">
+  <div style="background-color: #EFBE70; padding: 0px 68px; height: 59px" class="d-flex justify-content-between align-items-end">
+    <p style="font-size: 15px; margin: 21px 0px;">SÁCH TRONG NƯỚC - KINH TẾ</p>
+    <div class="pb-3">
+      <button class="btn mx-3 bar borderr" style="background-color: #C94800; color: #fff">Bán chạy</button>
+      <button class="btn mx-3 bar borderr" style="background-color: white">Đề cử</button>
+      <button class="btn ml-3 bar borderr" style="background-color: white">Sách mới</button>
+    </div>
+  </div>
+  <div>
+    <div class="col-12" style="background-color: #F8F3F3">
+      <div class="row" style="padding: 0 0px 56px 70px">
+        <div style="padding-top: 56px; width: 20%" *ngFor="let book of dataPage">
+            <div class="d-flex flex-column">
+              <img src="{{book.img}}" width="182px" height="245px">
+              <span class="my-3" style="max-width: 182px">{{book.name}}</span>
+              <div class="d-flex align-items-center" style="max-width: 182px">
+                <p style="color: #F4982B; font-size: 17px; font-weight: bold">{{book.salePrice}} đ</p>
+                <p style="font-size: 13px" class="ml-4 slide-style">{{book.price}} đ</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <ul class="pagination d-flex justify-content-end" style="margin: 60px 45px 120px 45px">
+      <li><a (click)="page1()" class="pageItem border deactive user-select-none">&laquo;</a></li>
+      <li><a (click)="page1()" [ngClass]="page === 1? 'active' : ''" class="pageItem deactive user-select-none">1</a></li>
+      <li><a (click)="page2()" [ngClass]="page === 2? 'active' : ''" class="pageItem deactive user-select-none">2</a></li>
+      <li><a (click)="page3()" [ngClass]="page === 3? 'active' : ''" class="pageItem deactive user-select-none">3</a></li>
+      <li><a class="pageItem deactive">4</a></li>
+      <li><a class="pageItem deactive">5</a></li>
+      <li><a (click)="page3()" class="pageItem deactive">&raquo;</a></li>
+    </ul>
+  </div>
+</div>

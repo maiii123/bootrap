@@ -1,325 +1,51 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="col-12 main">
+  <div class="row header">
+    <div class="col-8 text-center top22" style="left: 13.5%;">
+      <span class="ml-5 pl-5">~~~ Mỗi cuốn sách là một bức tranh kỳ diệu về cuộc sống ~~~</span>
+    </div>
+    <div class="col-3 text-right top15">
+      <mat-icon class="mx-3"> phone</mat-icon>
+      <mat-icon class="mx-3">shopping_cart</mat-icon>
+      <mat-icon class="mx-3">account_box</mat-icon>
+    </div>
+  </div>
+  <div class="row box-shadow menu">
+    <p class="text-center w-100 px-5" style="font-size: 28px;font-family: Poly; margin-top:43px">BOOKSTORE</p>
+    <div class="row d-flex justify-content-center w-100">
+      <button class="btn menuItem p-0 user-select-none" [routerLink]="['bookstore']">TRANG CHỦ</button>
+      <button mat-button class="btn menuItem user-select-none d-flex justify-content-center align-items-center" [matMenuTriggerFor]="menu">
+        <span>SÁCH TRONG NƯỚC</span>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" style="min-width: 500px; font-size: 16px">
+        <button mat-menu-item *ngFor="let book of listDomesticbooks" (click)="bookType(book.id)" ngModel="book" [value]="book.id">{{book.title}}</button>
+      </mat-menu>
 
-
-<div>
-  <div class="col-12 main">
-    <div class="row py-3 header">
-      <div class="col-8 text-right">
-        <span class="mx-5 px-5">~~~ Mỗi cuốn sách là một bức tranh kỳ diệu về cuộc sống ~~~</span>
-      </div>
-      <div class="col-3 text-right">
-        <mat-icon class="mx-3"> phone</mat-icon>
-        <mat-icon class="mx-3">shopping_cart</mat-icon>
-        <mat-icon class="mx-3">account_box</mat-icon>
-      </div>
-    </div>
-    <div class="row box-shadow heade">
-      <h4 class="text-center w-100 py-4 px-3">BOOKSTORE</h4>
-      <div class="row justify-content-center w-100">
-        <p class="px-4">TRANG CHỦ</p>
-        <p class="px-4 d-flex justify-content-end">
-          <span>SÁCH TRONG NƯỚC</span>
-          <mat-icon>arrow_drop_down</mat-icon>
-        </p>
-        <p class="px-4 d-flex justify-content-end">
-          <span>SÁCH NƯỚC NGOÀI</span>
-          <mat-icon>arrow_drop_down</mat-icon></p>
-        <p class="px-4">SÁCH BÁN CHẠY</p>
-        <p class="px-4">PHIÊN CHỢ CŨ</p>
-        <p class="px-4">REVIEW SÁCH</p>
-        <p class="mx-5"><mat-icon>search</mat-icon></p>
-      </div>
+      <button mat-button class="btn menuItem p-0 user-select-none d-flex justify-content-center align-items-center" [matMenuTriggerFor]="menu">
+        <span>SÁCH NƯỚC NGOÀI</span>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" style="min-width: 500px; font-size: 16px">
+        <button mat-menu-item>Sách văn học</button>
+        <button mat-menu-item>Sách kinh tế</button>
+        <button mat-menu-item>Sách thiếu nhi</button>
+      </mat-menu>
+      <button class="btn menuItem p-0 user-select-none">SÁCH BÁN CHẠY</button>
+      <button class="btn menuItem p-0 user-select-none">PHIÊN CHỢ CŨ</button>
+      <button class="btn menuItem p-0 user-select-none">REVIEW SÁCH</button>
+      <button class="btn menuItem p-0 user-select-none" style="margin-left: 35px"><mat-icon>search</mat-icon></button>
     </div>
   </div>
-    <div class="body-item">
-      <div class="row my-5 py-5 mr-5 d-flex justify-content-end w-100">
-        <div class="">
-          <img src="{{ImgSlide}}" height="377px" width="768px">
-        </div>
-        <div class="d-flex flex-column ml-5 justify-content-between">
-          <div *ngFor="let imgSlide of dataImgSlide">
-            <div  *ngIf="imgSlide.id > 1">
-              <img src="{{imgSlide.img}}" width="28%">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div style="margin: 0px 300px">
-        <div>
-              <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #9FD16D">
-              <p>FLASH SALE</p>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-          </div>
-          <mdb-carousel class="carousel slide carousel-fade my-4 d-flex" [animation]="'fade'">
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id < 6" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id < 11 && bookSale.id >5" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id > 10" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-          </mdb-carousel>
-        </div>
-        <div>
-          <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #5DC5CC">
-            <p>SÁCH BÁN CHẠY</p>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-          </div>
-          <div class="d-flex my-5 mx-5">
-            <div class="mr-5 pr-5">
-                <img src="{{BestBook}}" height="650" width="415">
-            </div>
-            <div class="d-flex flex-column">
-              <div class="d-flex">
-                <div *ngFor="let bestBook of dataBestBook">
-                  <div class="d-flex flex-column mx-4" *ngIf="bestBook.id > 1 && bestBook.id < 5">
-                    <img src="{{bestBook.img}}" height="225px" width="170x">
-                    <span class="my-3">{{bestBook.name}}</span>
-                    <div class="d-flex">
-                      <h5 style="color: #F4982B;">{{bestBook.salePrice}} đ</h5>
-                      <p class="ml-4 slide-style">{{bestBook.price}} đ</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex">
-                <div *ngFor="let bestBook of dataBestBook">
-                  <div class="d-flex flex-column mx-4" *ngIf="bestBook.id > 4">
-                    <img src="{{bestBook.img}}" height="225px" width="170x">
-                    <span class="my-3">{{bestBook.name}}</span>
-                    <div class="d-flex">
-                      <h5 style="color: #F4982B;">{{bestBook.salePrice}} đ</h5>
-                      <p class="ml-4 slide-style">{{bestBook.price}} đ</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-        </div>
-        <div>
-          <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #F57224">
-            <p>SÁCH TRONG NƯỚC</p>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-          </div>
-          <mdb-carousel class="carousel slide carousel-fade my-4 d-flex" [animation]="'fade'">
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id < 6" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id < 11 && bookSale.id >5" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id > 10" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-          </mdb-carousel>
-        </div>
-      </div>
-      <div style="background-color: #5DC5CC; padding: 0 300px" class="mb-5 d-flex justify-content-between">
-        <img src="https://andrews.phenikaa-uni.edu.vn/wp-content/uploads/business-books_bbaandrewsphenikaa.jpeg" width="15%" alt="">
-        <p class="p-4 title ">Sự Đọc Sách Đối Với Trí Tuệ
-          Giống Như Sự Vận Động Đối Với Cơ Thể</p>
-      </div>
-      <div class="pt-5">
-        <div>
-          <div class="d-flex justify-content-between pt-3 px-5" style="background-color: #FCED66">
-            <p>SÁCH NƯỚC NGOÀI</p>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-          </div>
-          <mdb-carousel class="carousel slide carousel-fade my-4 d-flex" [animation]="'fade'">
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id < 6" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id < 11 && bookSale.id >5" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id > 10" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-          </mdb-carousel>
-        </div>
-        <div>
-          <div class="d-flex justify-content-between pt-3 px-5" style="background-color: rgba(0, 0, 0, 0.25);">
-            <p>pHIÊN CHỢ CŨ</p>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-          </div>
-          <mdb-carousel class="carousel slide carousel-fade my-4 d-flex" [animation]="'fade'">
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id < 6" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id < 11 && bookSale.id >5" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item class="d-flex justify-content-between">
-              <div *ngFor="let bookSale of dataBookSale">
-                <div *ngIf="bookSale.id > 10" class="d-flex flex-column mx-5">
-                  <img src="{{bookSale.img}}" width="170x">
-                  <span class="my-3">{{bookSale.name}}</span>
-                  <div class="d-flex">
-                    <h5 style="color: #F4982B;">{{bookSale.salePrice}} đ</h5>
-                    <p class="ml-4 slide-style">{{bookSale.price}} đ</p>
-                  </div>
-                </div>
-              </div>
-            </mdb-carousel-item>
-          </mdb-carousel>
-        </div>
-      </div>
-    </div>
-    </div>
-  <div style="background: #DEFBFD;">
-    <div style="margin: 0px 300px" class="py-5">
-      <div class="">
-        <div class="d-flex justify-content-between pt-3 px-5 mb-5" style="background-color: #16445E">
-          <p>REVIEW SÁCH</p>
-          <mat-icon>keyboard_arrow_down</mat-icon>
-        </div>
-        <div class="d-flex">
-          <div>
-            <img src="https://store.rodbooks.com/Upload/2019/8/7/top-10-cuon-sach-hay-nhat-ve-tai-chinh-dang-doc-nhat-duoc-cac-nha-dau-tu-pho-wall-binh-chon-trong-nam-nay-hinh-anh-2.jpg" style="border: 20px solid #ffffff" height="380px" width="290x">
-          </div>
-          <div class="mx-5">
-            <div>
-              <h1>STEVE JOBS: MỌI THỨ ĐỀU CÓ THỂ</h1>
-              <div class="d-flex mb-4">
-                <p>Tác giả: </p>
-                <p class="mx-4" style="font-weight: 700">Trương Tuyển Cần</p>
-              </div>
-              <div>
-                <p>
-                  Cuốn sách Steve Jobs - Mọi Thứ Đều Có Thể sẽ mang đến cho bạn những trải nghiệm mới mẻ,
-                  bài học quý báu qua hành trình cuộc đời cũng như những năm tháng sự nghiệp của Steve Jobs,
-                  qua đó giúp bạn khám phá câu chuyện thành công thần kỳ của hãng Apple mà Steve Jobs là biểu
-                  tượng tiêu biểu cho sự thành công ấy.
-                </p>
-                <p>
-                  Cuốn sách Steve Jobs - Mọi Thứ Đều Có Thể sẽ mang đến cho bạn những trải nghiệm mới mẻ,
-                  bài học quý báu qua hành trình cuộc đời cũng như những năm tháng sự nghiệp của Steve Jobs,
-                  qua đó giúp bạn khám phá câu chuyện thành công thần kỳ của hãng Apple mà Steve Jobs là biểu
-                  tượng tiêu biểu cho sự thành công ấy.
-                </p>
-              </div>
-              <p class="py-2 px-4" style="background-color: #FC4B4B; width: 110px; border-radius: 40px">Đọc tiếp</p>
-            </div>
-          </div>
-          <div class="my-5">
-            <span class="px-4 py-4 mr-4" style="color: white; background-color: #FC4B4B; border-radius: 50%; font-size: 32px">9.5</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div style="background-color: #434343; color: white" class="pt-3 d-flex justify-content-center">
-    <p class="mx-5">Về chúng tôi</p>
-    <p class="mx-5">Lần đầu đến đây</p>
-    <p class="mx-5">BOOKSTORE</p>
-    <p class="mx-5">Blog</p>
-    <p class="mx-5">Facebook</p>
-  </div>
-  <div class="d-flex pt-3 justify-content-center" style="background-color: #000000; color: white">
-    <p class="mx-5">ĐIỀU KHOẢN</p>
-    <P class="mx-5">CHÍNH SÁCH</P>
-  </div>
+</div>
+<router-outlet></router-outlet>
+<div style="background-color: #434343; color: white; font-size: 18px" class="pt-3 d-flex justify-content-center">
+  <p class="mx-5">Về chúng tôi</p>
+  <p class="mx-5">Lần đầu đến đây</p>
+  <p class="mx-5">BOOKSTORE</p>
+  <p class="mx-5">Blog</p>
+  <p class="mx-5">Facebook</p>
+</div>
+<div class="d-flex pt-3 justify-content-center" style="background-color: #000000; color: white; font-size: 18px">
+  <p class="mx-5">ĐIỀU KHOẢN</p>
+  <P class="mx-5">CHÍNH SÁCH</P>
 </div>
